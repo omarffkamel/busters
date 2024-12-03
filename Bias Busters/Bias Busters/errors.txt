@@ -1,0 +1,12 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+The label marcus_investigation is defined twice, at File "game/script.rpy", line 111:
+label marcus_investigation:
+and File "game/script.rpy", line 185:
+label marcus_investigation:
+
+
+Ren'Py Version: Ren'Py 8.3.3.24111502
+Tue Dec  3 11:30:56 2024

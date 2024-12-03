@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 26, in script call
+    call number_sequence_challenge
+  File "game/script.rpy", line 26, in script call
+    call number_sequence_challenge
+ScriptError: could not find label 'number_sequence_challenge'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 26, in script call
+    call number_sequence_challenge
+  File "/home/omar/Downloads/renpy-8.3.3-sdkarm/renpy/ast.py", line 1414, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+  File "game/script.rpy", line 26, in script call
+    call number_sequence_challenge
+  File "/home/omar/Downloads/renpy-8.3.3-sdkarm/renpy/script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'number_sequence_challenge'.
+
+Linux-6.8.0-48-generic-x86_64-with-glibc2.35 x86_64
+Ren'Py 8.3.3.24111502
+Bias Busters 1.0
+Sat Nov 16 23:50:34 2024
