@@ -2,21 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 291: expected statement.
-    for option in options:
-               ^
+The label marcus_investigation is defined twice, at File "game/script.rpy", line 111:
+label marcus_investigation:
+and File "game/script.rpy", line 185:
+label marcus_investigation:
 
-File "game/script.rpy", line 304: expected statement.
-    "Review the evidence":
-                         ^
-
-File "game/script.rpy", line 478: expected statement.
-    for option in options:
-               ^
-
-File "game/script.rpy", line 647: expected statement.
-    for option in options:
-               ^
 
 Ren'Py Version: Ren'Py 8.3.3.24111502
-Sun Nov 17 23:52:04 2024
+Tue Dec  3 11:30:56 2024

@@ -936,6 +936,344 @@ label final_case_resolved_lila:
 
     return
 
+label final_case:
+
+    
+
+
+    whistleblower "Alex, we've got a delicate situation on our hands."
+    whistleblower "A confidential draft proposal outlining budget cuts for the city hall has been leaked online."
+    whistleblower "This leak has caused a public uproar, and the council is scrambling to control the damage."
+    whistleblower "Your task is to find out how this happened, who is responsible, and why."
+
+    narrator "The draft, which was still under review, contained speculative ideas such as job cuts, funding reallocations, and controversial project cancellations."
+
+    whistleblower "Here are the three individuals who had access to the draft and could be involved in the leak."
+
+ 
+
+    scene background_suspects with fade
+
+    suspect7 "Ethan Banks, a council member who has been critical of the current leadership."
+    suspect8 "Lila Adams, a junior intern who was tasked with managing the draft and distributing printed copies to council members."
+    suspect9 "Julian Sterling, an administrative officer responsible for organizing council documents."
+
+
+    whistleblower "Based on this information, who do you initially suspect?"
+
+    menu:
+        "Ethan Banks":
+            $ initial_suspect = "Ethan"
+            whistleblower "Let's start with Ethan and see where the trail leads."
+            jump ethan_sceario
+        "Lila Montgomery":
+            $ initial_suspect = "Lila"
+            whistleblower "Let's start with Lila and see where the trail leads."
+            jump lila_scenario
+        "Julian Sterling":
+            $ initial_suspect = "Julian"
+            whistleblower "Let's start with Julian and see where the trail leads."
+            jump julian_scenario
+
+label ethan_sceario:
+
+    scene council_office_day with fade
+    narrator "You find Ethan in his office, reviewing documents. He looks up and greets you."
+
+    menu:
+        "Did you have access to the draft?":
+            suspect7 "Of course I had access to it. As a council member, it’s part of my job to review such documents."
+            narrator "Ethan's response is straightforward, but his calm demeanor gives little away."
+        "Why would you leak the draft?":
+            suspect7 "Leak it? I may not agree with the leadership, but I wouldn't stoop to such tactics. I prefer to fight my battles openly."
+            narrator "Ethan's answer seems genuine, but his reputation as a dissenter keeps him under suspicion."
+        "Did you notice anything unusual recently?":
+            suspect7 "I did notice Julian acting nervous after a recent meeting. He was fumbling with his bag, like he was trying to hide something."
+            narrator "Ethan’s observation about Julian raises your curiosity."
+
+    narrator "As you leave Ethan’s office, you notice a sticky note on his desk with a cryptic reminder: 'Meet J at 3 PM.'"
+    narrator "You make a mental note to investigate further and decide to question Lila next."
+
+    jump lila_investigation
+
+label lila_investigation:
+
+    scene council_hallway_day with fade
+    whistleblower "As an intern tasked with managing the draft, Lila might know more than she’s letting on."
+    narrator "You find Lila in the hallway, carrying a stack of files. She looks startled when you approach."
+
+    menu:
+        "Did you handle the draft directly?":
+            suspect8 "Yes, I was in charge of distributing copies to the council members. I made sure everything was accounted for."
+            narrator "Her role in handling the draft puts her in a position of opportunity."
+        "Did anyone pressure you about the draft?":
+            suspect8 "No, not at all. Everyone was respectful. I didn’t feel any undue pressure."
+            narrator "Lila’cd .s answer is measured, but her hesitation raises a red flag."
+        "Did you see anything suspicious?":
+            suspect8 "I did see Julian staying late in the office the night before the leak. He was printing something, but I didn’t think much of it."
+            narrator "Her comment about Julian corroborates Ethan’s earlier observation."
+
+    narrator "As Lila hurries off to her next task, you notice a stray printout in the recycling bin nearby. It’s a partial copy of the draft with Julian’s initials scribbled in the corner."
+    narrator "You decide to investigate Julian next."
+
+    jump julian_investigation
+
+label julian_investigation:
+
+    scene council_archive_room with fade
+    whistleblower "Finally, you confront Julian in the archive room. He’s busy organizing files but looks up nervously when you enter."
+    narrator "Julian fidgets with his glasses, avoiding eye contact."
+
+    menu:
+        "Did you handle the draft directly?":
+            suspect9 "No, my job is just to organize the documents. I don’t usually handle council drafts."
+            narrator "His response is overly defensive, making you suspicious. He avoids your gaze as he answers."
+        "Why were you printing documents late at night?":
+            suspect9 "I... I wasn’t printing anything! You must have the wrong person."
+            narrator " He shifts uncomfortably, clearly hiding something."
+        "Why are your initials on this printout?":
+            suspect9 "I... I must have been reviewing it for formatting errors. It’s part of my job to ensure consistency."
+            narrator "His explanation is weak, and his nervous tone suggests he’s more involved than he admits."
+
+    narrator "Julian’s evasive answers and nervous behavior only raise your suspcion."
+    jump case_solved
+
+
+label case_solved:
+    scene council_office_day with fade
+
+    narrator "The council has reviewed your findings and deemed Julian guilty based on the evidence and his suspicious behavior."
+
+    jump final_scene
+
+
+label lila_scenario:
+
+    scene council_hallway_day with fade
+    whistleblower "You decide to start your investigation with Lila Montgomery. As the intern who managed the draft, she seems like a plausible suspect."
+    narrator "You find Lila in the hallway, carrying a stack of files. She looks startled when you approach."
+
+    menu:
+        "Did you handle the draft directly?":
+            suspect8 "Yes, I was in charge of distributing copies to the council members. I made sure everything was accounted for."
+            narrator "Her role puts her in a position of opportunity, but her tone suggests she’s trying to stay professional."
+        "Did anyone pressure you about the draft?":
+            suspect8 "No, not really. Everyone was polite, though Ethan did ask me some odd questions about it once."
+            narrator "Her mention of Ethan piques your interest."
+        "Did you see anything unusual the night before the leak?":
+            suspect8 "I saw Julian staying late in the office. He was printing something, but I didn’t think much of it."
+            narrator "Her comment about Julian raises your suspicion."
+
+    narrator "As Lila hurries off to her next task, you notice a sticky note sticking out of her organizer. It says: 'E. asked for early access. Do not tell anyone.'"
+    narrator "You decide to investigate Julian next."
+
+    jump julian_investigation_lila
+
+label julian_investigation_lila:
+
+    scene council_archive_room with fade
+    whistleblower "Next, you decide to question Julian Sterling. His late-night printing session might hold clues about the leak."
+    narrator "You find Julian in the archive room, shuffling through documents. He looks up nervously when you approach."
+
+    menu:
+        "Did you stay late in the office the night before the leak?":
+            suspect9 "Yes, but only to catch up on work! I wasn’t doing anything suspicious."
+            narrator "His response is defensive, making you more curious."
+        "Why were you printing documents late at night?":
+            suspect9 "Okay, fine! Ethan asked me to review the draft for him. He said it was for council purposes, so I didn’t question it."
+            narrator "Julian’s admission implicates Ethan, but he might still have been involved."
+        "Did you notice anything strange while working?":
+            suspect9 "Lila looked stressed. I heard her muttering about someone pressuring her, but I didn’t catch the details."
+            narrator "His comment aligns with Lila’s earlier mention of Ethan’s odd questions."
+
+    narrator "Before leaving, you notice a crumpled piece of paper in Julian’s trash bin. It’s part of the leaked draft with Ethan’s handwriting in the margins."
+    narrator "Armed with this new evidence, you decide to confront Ethan."
+
+    jump ethan_confrontation
+
+label ethan_confrontation:
+
+    scene council_office_day with fade
+    whistleblower "You decide to confront Ethan about the evidence tying him to the leak."
+    narrator "You find Ethan in his office, calmly reviewing documents. He looks up with a faint smile."
+
+    menu:
+        "Why is your handwriting on this draft?":
+            suspect7 "I was simply reviewing it! That’s part of my job as a council member."
+            narrator "Ethan’s calm demeanor falters slightly as he speaks."
+        "Why did you pressure Julian and Lila?":
+            suspect7 "Pressure? I didn’t pressure anyone! I asked for help with reviewing the draft, that’s all."
+            narrator "His tone grows defensive, and you sense he’s hiding something."
+        "Did you leak the draft?":
+            suspect7 "What? Of course not! I might not agree with the council’s decisions, but leaking documents isn’t how I operate."
+            narrator "Ethan’s denial is firm, but the mounting evidence suggests otherwise."
+
+    narrator "As you press Ethan further, cracks start to show in his story. Finally, he snaps under the pressure and confesses."
+
+    suspect7 "Fine! I leaked the draft! The public deserved to know how the council is planning to gut essential programs."
+    suspect7 "I didn’t do it for personal gain—I did it for the community."
+
+    narrator "Ethan’s confession reveals his motive. While his intentions might have been noble, his actions caused widespread chaos."
+    narrator "You inform the council about your findings, and Ethan is held accountable for his actions."
+
+    jump final_case_resolved_ethan
+
+label final_case_resolved_ethan:
+
+    scene council_hall_day with fade
+    whistleblower "Ethan has been identified as the source of the leak. While his actions were well-intentioned, they caused significant damage."
+    whistleblower "The council can now begin repairing its relationship with the community."
+    whistleblower "Excellent work, Alex. Are you ready for the next challenge?"
+
+    menu:
+        "Proceed to the Next Case":
+            jump final_scene
+        "End Game":
+            return
+
+    return
+
+label julian_scenario:
+
+    scene council_archive_room with fade
+    whistleblower "You decide to focus your initial investigation on Julian Sterling. As the administrative officer responsible for council documents, he had access to the draft."
+    narrator "You find Julian in the archive room, organizing files. He looks up nervously as you approach."
+
+    menu:
+        "Did you handle the draft directly?":
+            suspect9 "No, I don’t usually deal with drafts. My role is more about filing and document organization."
+            narrator "His answer seems evasive, considering his position."
+        "Why were you printing documents late at night?":
+            suspect9 "I wasn’t printing anything suspicious! I stayed late to catch up on work—end of story."
+            narrator "Julian’s response doesn’t match what others have said about his activities that night."
+        "Do you know anything about the leak?":
+            suspect9 "Nothing at all! I was as surprised as anyone when I heard about it."
+            narrator "Julian’s nervous demeanor and defensive tone make you suspect he’s hiding something."
+
+    narrator "Before leaving, you notice a crumpled piece of paper in Julian’s trash bin. It’s part of the leaked draft, with faint ink smudges that match the official council stationery."
+    narrator "You decide to investigate Ethan Banks next to cross-check Julian’s claims."
+
+    jump ethan_investigation_julian
+
+label ethan_investigation_julian:
+
+    scene council_office_day with fade
+    whistleblower "You decide to question Ethan Banks next. As a vocal critic of the council, he might have had a motive to leak the draft."
+    narrator "Ethan is in his office, reviewing documents. He looks up and greets you with a neutral expression."
+
+    menu:
+        "Did you review the draft?":
+            suspect7 "Of course I did. It’s part of my job as a council member. But I didn’t leak it, if that’s what you’re implying."
+            narrator "Ethan’s response is straightforward, but his calm demeanor gives little away."
+        "Why did you ask Julian to review the draft?":
+            suspect7 "I didn’t ask Julian to review it—I simply handed it to him for formatting checks. He’s better with that stuff than I am."
+            narrator "Ethan’s statement contradicts Julian’s earlier denial about handling the draft."
+        "Did you notice anything unusual recently?":
+            suspect7 "Yes. Lila seemed unusually stressed during the last meeting. She was fidgeting a lot, like she was hiding something."
+            narrator "Ethan’s observation about Lila adds a new layer to the investigation."
+
+    narrator "As you leave Ethan’s office, you notice a sticky note on his desk with a cryptic reminder: 'Follow up with Lila.'"
+    narrator "You decide to question Lila next."
+
+    jump lila_investigation_julian
+
+label lila_investigation_julian:
+
+    scene council_hallway_day with fade
+    whistleblower "Next, you decide to question Lila Montgomery. As the intern who managed the draft, she had direct access and opportunity."
+    narrator "You find Lila in the hallway, carrying a stack of files. She looks startled when you approach."
+
+    menu:
+        "Did you handle the draft directly?":
+            suspect8 "Yes, I was responsible for distributing the copies to the council members. I made sure everything was accounted for."
+            narrator "Her role puts her in a position of opportunity, but her tone suggests she’s trying to stay professional."
+        "Did anyone pressure you about the draft?":
+            suspect8 "No, not really. Julian did ask me about the distribution process, but it seemed like a routine question."
+            narrator "Her mention of Julian aligns with Ethan’s earlier claim."
+        "Did you see anything unusual the night before the leak?":
+            suspect8 "I saw Julian staying late in the office, printing something. I didn’t think much of it at the time."
+            narrator "Lila’s attempt to redirect suspicion to Julian feels calculated."
+
+    narrator "As Lila walks away, you notice a small folded note sticking out of her file folder. It reads: 'Destroy evidence by 8 AM.'"
+    narrator "You decide to confront Julian about Lila’s claim and see if he can shed more light."
+
+    jump julian_confrontation
+
+label julian_confrontation:
+
+    scene council_archive_room with fade
+    whistleblower "You return to Julian, armed with Lila’s statement and the evidence you’ve gathered."
+    narrator "Julian looks increasingly anxious as you begin questioning him."
+
+    menu:
+        "Why did Lila see you printing documents late at night?":
+            suspect9 "Alright, fine! I was printing something, but it wasn’t the draft. I was working on my personal files."
+            narrator "Julian’s excuse seems flimsy, but his tone suggests he’s hiding something bigger."
+        "Did you pressure Lila about the draft?":
+            suspect9 "No! If anything, she’s the one who seemed overly concerned about the draft’s security."
+            narrator "Julian’s claim shifts suspicion back to Lila."
+        "Why was part of the leaked draft in your trash?":
+            suspect9 "I was reviewing it for formatting issues, like Ethan said. I didn’t leak it—I swear!"
+            narrator "Julian’s nervousness doesn’t help his case, but his explanation seems plausible."
+
+    narrator "As Julian pleads his innocence, you realize that the strongest evidence points back to Lila. It’s time to confront her."
+
+    jump lila_confrontation
+
+label lila_confrontation:
+
+    scene council_hallway_day with fade
+    whistleblower "With mounting evidence against Lila, you decide to confront her directly."
+    narrator "You find Lila in the hallway again, her face pale as you approach."
+
+    menu:
+        "Why was there a note about destroying evidence in your folder?":
+            suspect8 "I... I don’t know what you’re talking about! That must have been a mistake."
+            narrator "Lila’s denial is weak, and her hands are trembling."
+        "Did you leak the draft?":
+            suspect8 "No! Why would I do that? It would ruin my career!"
+            narrator "Her response is defensive, but her panicked tone betrays her guilt."
+        "Why did you blame Julian?":
+            suspect8 "Because he’s always snooping around! I thought he’d take the fall if anything went wrong."
+            narrator "Lila’s admission reveals her attempt to frame Julian."
+
+    narrator "As you press further, Lila finally breaks down and confesses."
+
+    suspect8 "Alright, I admit it! I leaked the draft. I thought the public deserved to know what was being planned."
+    suspect8 "But I didn’t want to take the blame—I didn’t think it would cause this much chaos."
+
+    narrator "Lila’s confession leaves no doubt about her guilt. You quickly inform the council of your findings."
+
+    jump final_case_resolved_lila
+
+label final_case_resolved_lila:
+
+    scene council_hall_day with fade
+    whistleblower "Lila has been identified as the source of the leak. While her intentions might have been noble, her actions caused significant damage."
+    whistleblower "The council can now begin repairing its relationship with the community."
+    whistleblower "Excellent work, Alex. Another mystery solved. Are you ready for the next challenge?"
+
+    menu:
+        "Proceed to the Next Case":
+            jump final_scene
+        "End Game":
+            return
+
+    return
+
+    
+label final_scene:
+
+    
+    whistleblower "Once again, the seemingly obvious choice turned out to be far from the truth..."
+    whistleblower "Perhaps this says something about the importance of testing opposing hypothesesm rather than jumping to conclusions..."
+
+
+  
+
+    return
+
+
     
 label final_scene:
 

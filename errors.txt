@@ -1,0 +1,22 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 291: expected statement.
+    for option in options:
+               ^
+
+File "game/script.rpy", line 304: expected statement.
+    "Review the evidence":
+                         ^
+
+File "game/script.rpy", line 478: expected statement.
+    for option in options:
+               ^
+
+File "game/script.rpy", line 647: expected statement.
+    for option in options:
+               ^
+
+Ren'Py Version: Ren'Py 8.3.3.24111502
+Sun Nov 17 23:52:04 2024
